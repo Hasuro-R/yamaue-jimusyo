@@ -3,7 +3,10 @@ import styles from "./profile.module.scss";
 
 export default function ProfileSection() {
   return (
-    <section className={styles.section}>
+    <section
+      className={styles.section}
+      id="profile"
+    >
       <div className={styles.cn}>
         <div className={styles["profile-cn"]}>
           <h2>山上 博隆 / Yamaue Hirotaka</h2>

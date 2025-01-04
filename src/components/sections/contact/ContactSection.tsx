@@ -1,9 +1,15 @@
+import Link from "next/link";
 import styles from "./contact.module.scss";
 
 export default function ContactSection() {
   return (
-    <section className={styles.section}>
-      <div className={styles["cn"]}>
+    <section
+      className={styles.section}
+    >
+      <div
+        className={styles["cn"]}
+        id="contact"
+      >
         <div className={styles["section-title-cn"]}>
           <h2>Contact</h2>
           <p>連絡先</p>
@@ -17,6 +23,13 @@ export default function ContactSection() {
           <div className={styles["contact-list"]}>
             FAX：072-669-9281
           </div>
+          <div className={styles["partition"]} />
+          <Link
+            href="contact"
+            className={styles["contact-link"]}
+          >
+            メールでのお問い合わせはこちら
+          </Link>
         </div>
       </div>
     </section>

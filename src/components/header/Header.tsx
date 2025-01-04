@@ -2,12 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import styles from "./header.module.scss";
 import { useAtom } from "jotai";
 import { isScrollInvalidState } from "@/atoms/atoms";
 import { MenuType } from "@/types/menuType";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Header() {
+  const pathname = usePathname();
+
   const [, setIsScrollInvalid] = useAtom(isScrollInvalidState);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -15,9 +20,9 @@ export default function Header() {
 
   const borderStyle = { borderColor: (isScrolled || isOpenMenu) ? "var(--text-color)" : "var(--color-white)" };
   const menuList: MenuType[] = [
-    { title: "About" },
-    { title: "Profile" },
-    { title: "Contact" },
+    { title: "About", href: "#about" },
+    { title: "Profile", href: "#profile" },
+    { title: "Contact", href: "#contact" },
   ];
 
   const handleMenu = () => {
@@ -26,15 +31,19 @@ export default function Header() {
   };
 
   useEffect(() => {
-    setIsScrolled(window.scrollY > 120);
-
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 120);
+      if (pathname === "/") {
+        setIsScrolled(window.scrollY > 120);
+      } else {
+        setIsScrolled(true);
+      }
     };
+
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <>
@@ -107,13 +116,29 @@ export default function Header() {
             <>
             {menuList.map((menu, index) => (
               <motion.div
-                className={styles["menu-list-box"]}
+                style={{ width: "100%" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: index * 0.2 }}
                 key={index}
               >
-                {menu.title}
+                {pathname === "/" ? (
+                  <AnchorLink
+                    className={styles["menu-list-box"]}
+                    onClick={handleMenu}
+                    href={menu.href}
+                    offset="50"
+                  >
+                    {menu.title}
+                  </AnchorLink>
+                ) : (
+                  <Link
+                    href="/"
+                    className={styles["menu-list-box"]}
+                  >
+                    {menu.title}
+                  </Link>
+                )}
               </motion.div>
             ))}
             </>
