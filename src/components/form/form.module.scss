@@ -1,0 +1,108 @@
+@mixin button($color) {
+  width: 100%;
+  max-width: 10rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  margin-top: 1rem;
+  border-radius: 100vh;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: $color;
+  cursor: pointer;
+}
+
+.form {
+  width: 100%;
+  max-width: var(--width-main-screen);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  background-color: var(--color-white);
+}
+
+.partition {
+  width: 100%;
+  height: 1px;
+  border-radius: 100vh;
+  background-color: var(--color-gray);
+}
+
+.form-cn {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.label-cn {
+  width: 100%;
+  height: var(--height-form-section);
+  max-width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.input-cn {
+  width: 100%;
+  min-height: var(--height-form-section);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid var(--color-gray);
+  &:focus-within {
+    border-color: var(--color-green);
+  }
+}
+
+.textarea {
+  width: 100%;
+  height: auto;
+  min-height: 10rem;
+  max-height: 20rem;
+  resize: none;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid var(--color-gray);
+  &:focus-within {
+    border-color: var(--color-green);
+  }
+}
+
+.btn-cn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.send-btn {
+  @include button(var(--color-green));
+  color: var(--color-white);
+}
+
+.disabled-btn {
+  @include button(var(--color-green));
+  color: var(--color-white);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.home-btn {
+  @include button(var(--color-white));
+  border: 0.1rem solid var(--color-green);
+}

@@ -13,6 +13,8 @@
   --width-main-screen: 1020px;
   --width-horizon-padding: 2.5rem;
 
+  --height-form-section: 3.5rem;
+
   --z-index-header: 500;
 
   @media screen and (max-width: 580px) {
@@ -46,4 +48,25 @@ a {
 
 img {
   object-fit: cover;
+}
+
+input {
+  font-size: 16px;
+  color: rgb(var(--text-color));
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+
+textarea {
+  font-size: 16px;
+  color: rgb(var(--text-color));
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  border: none;
+  outline: none;
 }
