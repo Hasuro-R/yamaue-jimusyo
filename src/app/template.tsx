@@ -4,6 +4,9 @@ import React from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { useAtom } from "jotai";
 import { isScrollInvalidState } from "@/atoms/atoms";
+import styles from "./page.module.scss";
+import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,13 @@ export default function RootTemplate({
       className={`${geistSans.variable} ${geistMono.variable}`}
       style={{ overflow: isScrollInvalid ? "hidden" : "auto" }}
     >
-      {children}
+      <div className={styles.page}>
+        <Header />
+        <main className={styles.main}>
+          {children}
+        </main>
+        <Footer />
+      </div>
     </body>
   );
 }
