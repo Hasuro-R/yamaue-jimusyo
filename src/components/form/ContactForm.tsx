@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import styles from "./form.module.scss";
 import { ContactFormInputType } from "@/types/contactForm";
 import { useRouter } from "next/navigation";
@@ -54,13 +54,6 @@ export default function ContactForm() {
     });
   };
 
-  useEffect(() => {
-    if (textareaRef.current) {
-      const element = textareaRef.current;
-      element.focus();
-    }
-  }, []);
-
   return (
     <div className={styles["form"]}>
       <div className={styles["form-cn"]}>
@@ -73,6 +66,7 @@ export default function ContactForm() {
             placeholder="山田 太郎"
             type="text"
             value={formValues.name}
+            maxLength={50}
             onChange={(e) => setFormValues({...formValues, name: e.target.value})}
           />
         </div>
@@ -87,6 +81,7 @@ export default function ContactForm() {
             className={styles["input"]}
             placeholder="yamada@example.com"
             type="email"
+            maxLength={50}
             value={formValues.email}
             onChange={(e) => setFormValues({...formValues, email: e.target.value})}
           />
