@@ -1,0 +1,89 @@
+@mixin border($width) {
+  width: $width;
+  border-radius: 100vh;
+  border: 1px solid var(--text-color);
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index-header);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 var(--width-horizon-padding);
+  background-color: inherit;
+}
+
+.header-menu-bg {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: calc(var(--z-index-header) - 1);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header-cn {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+}
+
+.toggle-button {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.border1 {
+  @include border(1.3rem);
+}
+
+.border2 {
+  @include border(1rem);
+}
+
+.border3 {
+  @include border(0.7rem);
+}
+
+.menu-cn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.menu-list-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--color-pale-gray);
+  }
+}
