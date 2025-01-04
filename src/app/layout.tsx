@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "山上登記測量事務所",
   description: "山上 博隆の登記測量事務所です。",
   verification: {
-    google: "EaRzaToN8Od80w_p6Fg6xILOs-PYYCiPNvTND1AZLkM",
+    google: "EaRzaToN8Od80w_p6Fg6xIL0s-PYYCiPNvTND1AZLkM",
   },
 };
 
