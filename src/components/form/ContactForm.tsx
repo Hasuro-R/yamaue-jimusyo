@@ -95,7 +95,7 @@ export default function ContactForm() {
         <div className={styles["input-cn"]}>
           <textarea
             className={styles["textarea"]}
-            placeholder=""
+            placeholder="お問い合わせ内容を入力してください"
             value={formValues.body}
             maxLength={2000}
             onChange={(e) => handleChange(e)}

@@ -35,6 +35,9 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 }
 
 .label-cn {
@@ -75,7 +78,7 @@
   min-height: 10rem;
   max-height: 20rem;
   resize: none;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   border: 0.1rem solid var(--color-gray);
   &:focus-within {
     border-color: var(--color-green);
