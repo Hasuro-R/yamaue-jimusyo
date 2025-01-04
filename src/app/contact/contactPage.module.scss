@@ -1,0 +1,29 @@
+.all-cn {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 2rem var(--width-horizon-padding);
+  padding-top: 6rem;
+  background-color: var(--color-pale-gray);
+}
+
+.title-cn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  color: var(--color-green);
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}

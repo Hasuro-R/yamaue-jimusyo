@@ -3,8 +3,13 @@ import styles from "./about.module.scss";
 
 export default function AboutSection() {
   return (
-    <section className={styles.section}>
-      <div className={styles.cn}>
+    <section
+      className={styles.section}
+      id="about"
+    >
+      <div
+        className={styles.cn}
+      >
         <div className={styles["img-cn"]}>
           <p className={styles["title"]}>About</p>
           <Image src="/about.png" alt="about" width={300} height={200} />
